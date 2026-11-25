@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aplicación Móvil de Organización Personal · Portafolio HCI</title>
+  <meta name="description" content="Portafolio del proceso de diseño centrado en el usuario de una aplicación móvil de organización personal para estudiantes universitarios sobrecargados.">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<!-- 1. PORTADA -->
+<header class="portada" id="portada">
+  <div class="contenedor">
+    <p class="etiqueta">Human-Computer Interaction · FIUNI · Portafolio parcial</p>
+    <h1>Aplicación Móvil de Organización Personal</h1>
+    <p class="problema">Los estudiantes universitarios con mucha carga confían en su memoria para recordar entregas y compromisos, y cuando llega el cansancio esa memoria falla: se olvidan tareas, pierden puntos y viven con estrés constante.</p>
+    <ul class="datos">
+      <li><strong>Para quién</strong>Estudiantes universitarios que combinan cursada, entregas y responsabilidades personales</li>
+      <li><strong>Integrantes</strong>Gabriel Bolla · Tobías Huber · Sebastián Setrini · Shu Takahashi</li>
+      <li><strong>Prototipo</strong><a href="https://www.figma.com/design/nhPlANoN5DfQwIHJNg5IWS">Ver el prototipo de alta fidelidad en Figma</a></li>
+    </ul>
+    <div class="galeria-portada">
+      <img src="img/af-t1-hoy.jpg" alt="Pantalla Hoy de la versión de alta fidelidad: progreso del día, tareas pendientes y completadas, y el botón Añadir tarea.">
+      <img src="img/af-t2-calendario.jpg" alt="Pantalla Calendario de alta fidelidad: mes de octubre con indicadores de tareas por día y las tareas del día seleccionado.">
+      <img src="img/af-t5-propuesta.jpg" alt="Pantalla Propuesta de la IA: la tarea con fecha límite, prioridad sugerida y aviso, con botones para guardar, editar o descartar.">
+    </div>
+  </div>
+</header>
+
+<nav class="indice" aria-label="Índice del portafolio">
+  <div class="contenedor">
+    <ol>
+      <li><a href="#portada">Portada</a></li>
+      <li><a href="#investigacion">Investigación</a></li>
+      <li><a href="#definicion">Definición</a></li>
+      <li><a href="#ideacion">Ideación</a></li>
+      <li><a href="#prototipo">Evolución del prototipo</a></li>
+      <li><a href="#evaluaciones">Evaluaciones y plan de prueba</a></li>
+    </ol>
+  </div>
+</nav>
+
+<main id="contenido">
+
+<!-- 2. INVESTIGACIÓN -->
+<section id="investigacion" aria-labelledby="t-investigacion">
+  <div class="contenedor">
+    <h2 id="t-investigacion"><span class="num">2.</span> Investigación (Empatizar)</h2>
+    <p class="bajada">Combinamos una encuesta para medir qué tan extendido es el problema y entrevistas en profundidad para entender por qué ocurre.</p>
+
+    <h3>Métodos y participantes</h3>
+    <div class="cifras">
+      <div class="cifra"><span class="valor">54</span><span class="que">respuestas válidas a la encuesta. 74% tiene entre 18 y 25 años; 63% solo estudia y 24% estudia y trabaja.</span></div>
+      <div class="cifra"><span class="valor">5</span><span class="que">entrevistas en profundidad: estudiante de Medicina, estudiante, tesista con apoyo familiar, estudiante universitario y una repostera emprendedora.</span></div>
+      <div class="cifra"><span class="valor">10</span><span class="que">preguntas de encuesta y 12 preguntas abiertas de entrevista sobre carga, olvidos, métodos y bienestar.</span></div>
+    </div>
+    <p><strong>Cómo analizamos los datos:</strong> normalizamos las transcripciones (con ayuda de IA, marcando los segmentos dudosos), unificamos la encuesta en una sola planilla, hicimos codificación inductiva manual de cada entrevista y agrupamos los códigos en un diagrama de afinidad. Después le pedimos a una IA el mismo agrupamiento para contrastarlo con el nuestro. Las respuestas atípicas de la encuesta (por ejemplo, «Ibuprofeno» como medio para recordar compromisos) se dejaron visibles y señaladas en lugar de borrarlas sin registro.</p>
+
+    <h3>Lo que mostró la encuesta</h3>
+    <div class="grid-2">
+      <figure>
+        <img src="img/encuesta-p4-superposicion.jpg" alt="Gráfico de barras, pregunta 4: a veces 23 personas (43%), rara vez 15 (28%), constantemente 12 (22%), nunca 4 (7%).">
+        <figcaption>P4. ¿Con qué frecuencia se te superponen las actividades? 65% dice «a veces» o «constantemente».</figcaption>
+      </figure>
+      <figure>
+        <img src="img/encuesta-p6-rendimiento.jpg" alt="Gráfico de barras, pregunta 6: afecta un poco 36 (67%), me afecta mucho 11 (20%), no afecta 7 (13%).">
+        <figcaption>P6. ¿En qué medida la cantidad de actividades afecta tu rendimiento? 87% dice que lo afecta en algún grado.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/encuesta-p7-descanso.jpg" alt="Gráfico de barras, pregunta 7: afecta mucho 24 (44%), afecta un poco 21 (39%), no afecta 9 (17%).">
+        <figcaption>P7. ¿Afecta tu descanso y tiempo libre? 44% dice que lo afecta mucho.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/encuesta-p9-medio.jpg" alt="Gráfico de barras, pregunta 9: confío en mi memoria 16 (30%), agenda en papel 13 (24%), calendarios digitales 13 (24%), aplicaciones de notas 9 (17%), otras respuestas 1 cada una.">
+        <figcaption>P9. ¿Qué medio usás para recordar tus compromisos? El método más elegido es la memoria (30%).</figcaption>
+      </figure>
+    </div>
+
+    <h3>Lo que dijeron en las entrevistas</h3>
+    <blockquote>«Como si tratara de beber de una catarata con una pajita.»<cite>Entrevistado 1, estudiante de Medicina, describiendo su semana</cite></blockquote>
+    <blockquote>«Una vez me olvidé de entregar un trabajo… Tuve que entregarlo tarde y me bajaron puntos.»<cite>Entrevistado 2, estudiante</cite></blockquote>
+    <blockquote>«Creo que me ayudaría tener todo en un solo lugar, porque ahora tengo cosas anotadas en distintos lados.»<cite>Entrevistado 2, estudiante</cite></blockquote>
+
+    <h4>Diagrama de afinidad: temas</h4>
+    <div class="tabla-scroll">
+      <table>
+        <caption>Temas del diagrama de afinidad, contrastados con el agrupamiento hecho con IA</caption>
+        <thead><tr><th scope="col">Tema</th><th scope="col">Participantes</th><th scope="col">Evidencia en contra</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Métodos de organización informales, basados en la memoria</th><td>Entrevistados 1, 2 y 4</td><td>—</td></tr>
+          <tr><th scope="row">Deterioro del bienestar físico, emocional y social</th><td>1, 2, 3 y 4</td><td>Entrevistada 5: «No me afecta»</td></tr>
+          <tr><th scope="row">Consecuencias de los olvidos (académicas, familiares, sociales)</th><td>1, 2, 3 y 4</td><td>Entrevistada 5: «Nunca me olvidé todavía»</td></tr>
+          <tr><th scope="row">Picos de sobrecarga en parciales, cierres de semestre o temporadas de pedidos</th><td>1, 2, 4 y 5</td><td>Entrevistada 3 la atribuye a imprevistos, no a épocas fijas</td></tr>
+          <tr><th scope="row">Fricción por herramientas físicas o dispersas</th><td>2 y 5</td><td>Evidencia limitada (2 participantes)</td></tr>
+          <tr><th scope="row">Postergar o abandonar tareas ante la saturación</th><td>1, 2 y 4</td><td>Entrevistada 3 reorganiza en vez de abandonar</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Hallazgos</h3>
+    <div class="tabla-scroll">
+      <table>
+        <caption>Hallazgos con su base numérica</caption>
+        <thead><tr><th scope="col">N.º</th><th scope="col">Hallazgo</th><th scope="col">Fuente</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">H1</th><td>4 de 5 entrevistados sienten estrés, agotamiento físico o cansancio emocional por la acumulación de actividades.</td><td>Entrevistas</td></tr>
+          <tr><th scope="row">H2</th><td>4 de 5 identifican picos de sobrecarga en períodos concretos (parciales, cierres de semestre, temporadas de pedidos).</td><td>Entrevistas</td></tr>
+          <tr><th scope="row">H3</th><td>3 de 5 se apoyan solo en la memoria o la improvisación, sin una herramienta de registro.</td><td>Entrevistas</td></tr>
+          <tr><th scope="row">H4</th><td>3 de 5 sufrieron consecuencias por olvidos: pérdida de puntos, reclamos de compañeros o alarma familiar.</td><td>Entrevistas</td></tr>
+          <tr><th scope="row">H5</th><td>3 de 5 postergan, desorganizan o abandonan tareas cuando se saturan.</td><td>Entrevistas</td></tr>
+          <tr><th scope="row">H6</th><td>65% de los encuestados (35 de 54) siente que sus actividades se superponen a veces o constantemente.</td><td>Encuesta</td></tr>
+          <tr><th scope="row">H7</th><td>87% de los encuestados (47 de 54) dice que la cantidad de actividades afecta su rendimiento.</td><td>Encuesta</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Insights</h3>
+    <div class="decision">
+      <p><strong>Insight 1 (eje estudiantil).</strong> Confiar solo en la memoria para gestionar muchas responsabilidades falla cuando se acumula el agotamiento físico, y los olvidos se convierten en sanciones y conflictos con el entorno. Los olvidos no son falta de voluntad: son el resultado de un colapso mental por cansancio. <em>Sale de H1, H3 y H4.</em></p>
+    </div>
+    <div class="decision">
+      <p><strong>Insight 2 (eje emprendimiento).</strong> Las herramientas físicas (notas adhesivas, papel) no se adaptan a los cambios: cada pedido que cambia obliga a reescribir todo, con pérdida de tiempo y desgaste. <em>Sale del tema de afinidad «fricción por herramientas dispersas» (entrevistada 5).</em></p>
+    </div>
+    <figure>
+      <img src="img/slide-insight-carga-cognitiva.jpg" alt="Diapositiva del insight: curva de carga cognitiva donde la retención de la memoria cae bruscamente cuando aumenta el agotamiento acumulado, marcando la caída de tareas.">
+      <figcaption>Así presentamos el insight 1: la memoria aguanta hasta que el agotamiento acumulado la hace colapsar.</figcaption>
+    </figure>
+
+    <h4>Autochequeo de sesgos</h4>
+    <ul>
+      <li><strong>Confirmación:</strong> esperábamos encontrar que «sin herramientas, hay olvidos». La investigación agregó algo que no habíamos previsto: el agotamiento físico es el verdadero detonante de los olvidos.</li>
+      <li><strong>Selección:</strong> analizamos las 54 encuestas y las 5 entrevistas completas, incluidas las respuestas que contradicen la tendencia (entrevistada 5).</li>
+      <li><strong>Sobregeneralización:</strong> todos los hallazgos llevan su proporción exacta («3 de 5», «23 de 54»), sin «todos» ni «la mayoría».</li>
+    </ul>
+    <p>Material completo: <a href="anexos/01-analisis-de-datos-empatizar.pdf">análisis de datos de la encuesta y las entrevistas (PDF)</a> y <a href="anexos/02-presentacion-investigacion-y-definicion.pdf">presentación de investigación y definición (PDF)</a>.</p>
+  </div>
+</section>
+
+<!-- 3. DEFINICIÓN -->
+<section id="definicion" aria-labelledby="t-definicion">
+  <div class="contenedor">
+    <h2 id="t-definicion"><span class="num">3.</span> Definición del problema (Definir)</h2>
+    <p class="bajada">Convertimos los hallazgos en dos personas, un punto de vista y una pregunta guía. Cada requisito se puede rastrear hasta el hallazgo del que sale.</p>
+
+    <h3>Personas</h3>
+    <figure>
+      <img src="img/user-personas.jpg" alt="Fichas de las dos personas. Mateo, el estudiante universitario sobrecargado: se organiza improvisando, sufre sanciones académicas y alteración del sueño; cita: creo que me ayudaría tener todo en un solo lugar. Camila, la emprendedora multitarea: usa notas adhesivas, se frustra reescribiendo listas cuando cambia un pedido.">
+      <figcaption>Mateo y Camila. Cada campo de la ficha remite a una cita o código de las entrevistas.</figcaption>
+    </figure>
+    <div class="decision">
+      <p><strong>Decisión: el producto se enfoca en Mateo.</strong> El perfil estudiantil es el que se repite con más fuerza: 4 de los 5 entrevistados son estudiantes y el 87% de la encuesta tiene la carga afectando su rendimiento. Camila (insight 2) quedó como un segundo perfil: sus necesidades de editar sin reescribir están cubiertas por la edición de tareas, pero el seguimiento por etapas de pedidos se posterga.</p>
+    </div>
+
+    <div class="grid-2">
+      <figure>
+        <img src="img/mapa-empatia.jpg" alt="Mapa de empatía del joven que equilibra estudio, trabajo y vida personal: qué dice, qué piensa, qué hace y qué siente, más esfuerzos y resultados que busca.">
+        <figcaption>Mapa de empatía construido con las citas codificadas de los 5 entrevistados.</figcaption>
+      </figure>
+      <div>
+        <h3>Punto de vista (POV)</h3>
+        <p><strong>Borrador:</strong> Mateo, un estudiante universitario, necesita una forma de acordarse de sus trabajos y tareas porque cuando confía en su memoria se olvida de las entregas y termina rindiendo mal o estresándose.</p>
+        <p><strong>Versión refinada:</strong> Mateo, un estudiante universitario con alta exigencia académica y personal, <strong>necesita</strong> centrar y priorizar de forma clara sus actividades <strong>porque</strong> depende de su memoria, y bajo agotamiento físico esto hace que se olvide de actividades, se desorganice y viva con estrés constante.</p>
+        <h3>Pregunta «¿Cómo podríamos…?»</h3>
+        <p class="decision">¿Cómo podríamos ayudar a Mateo a visualizar y organizar sus tareas por prioridad para que pueda tomar decisiones anticipadas sobre su tiempo sin depender de su memoria ni llegar al cansancio mental?</p>
+      </div>
+    </div>
+
+    <h3>Mapa de viaje</h3>
+    <figure>
+      <a href="img/mapa-de-viaje.jpg"><img src="img/mapa-de-viaje.jpg" alt="Mapa de viaje de Mateo en tres etapas: antes (planificación de pendientes), durante (ejecución bajo presión) y después (cierre y consecuencias), con acciones, lo que piensa y siente, puntos de dolor, oportunidades y evidencia."></a>
+      <figcaption>El momento crítico es «durante»: ejecuta las tareas a ritmo acelerado, aplica un triaje mental y ahí aparecen los olvidos. Las oportunidades de esa etapa (alertas preventivas, recordatorios) guiaron los requisitos. Tocá la imagen para verla en tamaño completo.</figcaption>
+    </figure>
+
+    <h3>Historias de usuario y requisitos, con su origen</h3>
+    <div class="tabla-scroll">
+      <table>
+        <caption>Trazabilidad: de los hallazgos a las historias y los requisitos funcionales</caption>
+        <thead><tr><th scope="col">Hallazgo</th><th scope="col">Historia de usuario</th><th scope="col">Requisitos funcionales</th></tr></thead>
+        <tbody>
+          <tr><td>H2 · picos de sobrecarga</td><td>1. Como estudiante, quiero anticipar los períodos en que mis obligaciones se van a acumular, para repartir mi esfuerzo antes del pico.</td><td>RF1.1 Mostrar las fechas con más compromisos que el promedio. RF1.2 Avisar con anticipación configurable antes de un período de alta carga.</td></tr>
+          <tr><td>H3, H4 · memoria y olvidos con consecuencias</td><td>2. Como estudiante, quiero tener certeza de que ningún compromiso importante se me va a pasar, para que mis olvidos no afecten mis notas ni a otras personas.</td><td>RF2.1 Recordatorio antes de cada fecha límite. RF2.2 Marcar un compromiso como importante con un recordatorio distinto.</td></tr>
+          <tr><td>H5 · postergar o abandonar</td><td>3. Como estudiante, quiero decidir con claridad qué tareas puedo postergar sin consecuencias graves, para no perder el control.</td><td>RF3.1 Ordenar las tareas por un criterio de prioridad. RF3.2 Reprogramar una tarea sin borrar su registro original.</td></tr>
+          <tr><td>Insight 2 · herramientas rígidas</td><td>4. Como emprendedora, quiero adaptarme rápido cuando un pedido cambia de último momento, sin rehacer todo.</td><td>RF4.1 Editar un registro sin crear uno nuevo. RF4.2 Conservar el historial de cambios.</td></tr>
+          <tr><td>H1, H6, H7 · estrés y rendimiento</td><td>5. Como estudiante, quiero sentir que tengo mi carga bajo control en las semanas más pesadas, para reducir el desgaste.</td><td>RF5.1 Resumen cuantificado de pendientes por día o semana. RF5.2 Ver en cualquier momento cuántas tareas completé y cuántas faltan.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4>Requisitos no funcionales destacados</h4>
+    <ul>
+      <li><strong>Pocos pasos para registrar</strong>, porque el usuario anota en momentos de alta carga y entre clases (sale de H1 y del mapa de viaje).</li>
+      <li><strong>Funciona con conexión intermitente</strong>, porque los entrevistados se trasladan mucho durante el día (entrevistada 3).</li>
+      <li><strong>Para usuarios sin experiencia en herramientas de gestión</strong>: el 30% hoy confía solo en su memoria (P9).</li>
+      <li><strong>Objetivo de usabilidad:</strong> al menos el 80% de los usuarios consulta sus pendientes sin errores de navegación.</li>
+    </ul>
+    <p>Documento completo: <a href="anexos/03-definir-insights-pov-requisitos.pdf">insights, POV, historias y requisitos (PDF)</a>.</p>
+  </div>
+</section>
+
+<!-- 4. IDEACIÓN -->
+<section id="ideacion" aria-labelledby="t-ideacion">
+  <div class="contenedor">
+    <h2 id="t-ideacion"><span class="num">4.</span> Ideación (Idear)</h2>
+    <p class="bajada">Partimos de la pregunta «¿Cómo podríamos…?», generamos ideas sin juzgar, exploramos variantes con Crazy 8s y elegimos con los seis principios de diseño de interacción.</p>
+
+    <h3>Lluvia de ideas: las ideas priorizadas</h3>
+    <div class="tabla-scroll">
+      <table>
+        <caption>Ideas priorizadas para la pregunta de Mateo</caption>
+        <thead><tr><th scope="col">Idea</th><th scope="col">Historia o requisito</th><th scope="col">Por qué la elegimos</th></tr></thead>
+        <tbody>
+          <tr><td>Vista semanal que agrupa los compromisos por día y resalta los días con carga muy por encima del promedio</td><td>Historia 1 → RF1.1, RF1.2</td><td>Hace visible el pico de carga antes de que ocurra, sin que Mateo lo calcule mentalmente.</td></tr>
+          <tr><td>Registrar un compromiso en un solo paso (nombre + fecha) y completar el detalle después</td><td>Historia 2 → RF2.1</td><td>Ataca la barrera que hoy hace que Mateo no anote nada: la fricción de registrar cuando está cansado.</td></tr>
+          <tr><td>Botón «reprogramar» que mueve la tarea sin borrar el registro y muestra cuántas veces se movió</td><td>Historia 3 → RF3.2</td><td>Convierte el «abandono silencioso» en una decisión visible y sin culpa.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Para Camila también priorizamos la edición directa con historial, los pedidos divididos en etapas y un resumen del día. Se postergaron al enfocar el producto en Mateo.</p>
+
+    <h3>Crazy 8s</h3>
+    <div class="grid-2">
+      <figure>
+        <img src="img/crazy8-a.jpg" alt="Hoja cuadriculada con bocetos a lápiz del Crazy 8s: listas de tareas, una vista con chips de días, tarjetas con checkbox y un botón de micrófono.">
+        <figcaption>Crazy 8s: ocho variantes en ocho minutos sobre cómo mostrar y priorizar las tareas del día.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/crazy8-b.jpg" alt="Segunda hoja de bocetos del Crazy 8s con variantes de lista con íconos de estado y orden por urgencia.">
+        <figcaption>Variantes con orden por urgencia (V4) e íconos de estado (V7).</figcaption>
+      </figure>
+    </div>
+
+    <h3>Cómo elegimos: curación con los seis principios</h3>
+    <div class="tabla-scroll">
+      <table>
+        <caption>Los tres bocetos más prometedores evaluados con los principios de diseño de interacción</caption>
+        <thead><tr><th scope="col">Boceto</th><th scope="col">Manipulación directa</th><th scope="col">Affordance</th><th scope="col">Retroalimentación</th><th scope="col">Restricciones</th><th scope="col">Significante</th><th scope="col">Mapeo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">V1 · Lista simple</th><td>Cumple</td><td>No queda claro</td><td>Ignora</td><td>No queda claro</td><td>Cumple</td><td>No queda claro (sin criterio de orden visible)</td></tr>
+          <tr><th scope="row">V4 · Orden por urgencia</th><td>Cumple</td><td>No queda claro</td><td>Ignora</td><td>Cumple</td><td>Cumple fuerte</td><td>Cumple (arriba = más urgente)</td></tr>
+          <tr><th scope="row">V7 · Estado con ícono</th><td>Cumple</td><td>No queda claro</td><td>Ignora</td><td>No queda claro</td><td>Cumple con matiz (código de color a aprender)</td><td>No queda claro</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="decision">
+      <p><strong>Dirección elegida:</strong> combinar el orden por urgencia de V4 (lo más urgente arriba) con los íconos de estado de V7 (pendiente, en curso, resuelto). Cumple mejor el principio de mapeo: la posición comunica la urgencia y el ícono comunica el estado, sin que se pisen. Resuelve las historias 3 y 5.</p>
+      <p><strong>Lo que aprendimos de la curación:</strong> ninguno de los tres bocetos resolvía la retroalimentación (qué pasa al tocar algo). Por eso agregamos una pantalla de confirmación al prototipo en papel.</p>
+    </div>
+    <p>Guía completa: <a href="anexos/04-idear-crazy8-prototipo-papel.pdf">lluvia de ideas, Crazy 8s, curación y prototipo en papel (PDF)</a>.</p>
+  </div>
+</section>
+
+<!-- 5. EVOLUCIÓN DEL PROTOTIPO -->
+<section id="prototipo" aria-labelledby="t-prototipo">
+  <div class="contenedor">
+    <h2 id="t-prototipo"><span class="num">5.</span> Evolución del prototipo (Prototipar)</h2>
+    <p class="bajada">El prototipo pasó por tres fidelidades. En cada paso explicamos qué cambió y qué lo motivó.</p>
+    <ul class="etapas" aria-label="Etapas del prototipo">
+      <li>Papel</li><li>Wireframes</li><li aria-current="step">Alta fidelidad</li>
+    </ul>
+
+    <h3>Etapa 1 · Prototipo en papel</h3>
+    <div class="grid-2">
+      <figure>
+        <img src="img/prototipo-papel.jpg" alt="Foto del prototipo en papel con tres pantallas dibujadas a lápiz: Vista Hoy con chips de días y tres compromisos, Registrar nuevo compromiso con nombre, fecha límite y casilla Marcar como importante, y Confirmación con un tilde y el texto Compromiso guardado.">
+        <figcaption>Tres pantallas: Vista Hoy, Registrar compromiso y Confirmación.</figcaption>
+      </figure>
+      <div>
+        <p>Probamos un solo flujo: ver lo urgente del día → registrar un compromiso → ver la confirmación. La pantalla de confirmación existe justamente porque la curación mostró que nos faltaba retroalimentación.</p>
+        <p>Al registrar se puede marcar un compromiso como <strong>importante</strong>, lo que activa un recordatorio con más anticipación (RF2.2).</p>
+        <p>Lo revisamos con la pregunta «¿alguien que no participó podría recorrerlo sin explicación?». Concluimos que sí, porque la secuencia «tocar lo urgente → marcar listo → ver confirmación» se explica sola.</p>
+      </div>
+    </div>
+
+    <h3>Etapa 2 · Wireframes</h3>
+    <p>Pasamos de 3 pantallas a un flujo navegable por tareas, en escala de grises. Los cambios respecto del papel:</p>
+    <ul>
+      <li><strong>Se sumó el Calendario</strong> con indicadores de carga por día (● pendientes, ○ completadas), para cumplir la historia 1 (anticipar los picos).</li>
+      <li><strong>Se sumó la creación de tareas con IA:</strong> Mateo escribe con sus palabras y la IA propone fecha, prioridad y aviso. Responde a que registrar tiene que costar poco cuando está cansado.</li>
+      <li><strong>El aviso pasó a ser configurable</strong> (1 día antes, 2 días antes, a elección), en lugar de una casilla de «importante» (RF1.2 y RF2.1).</li>
+      <li><strong>La dificultad pasó a ser un dato visible de cada tarea</strong> para ayudar a decidir qué postergar (historia 3).</li>
+      <li><strong>La confirmación dejó de ser una pantalla aparte</strong> y pasó a ser un mensaje «Tarea guardada» arriba de Hoy, para no cortar el flujo.</li>
+    </ul>
+    <figure>
+      <a href="img/wf-t1-flujo.jpg"><img src="img/wf-t1-flujo.jpg" alt="Cuatro wireframes en escala de grises de la tarea 1: Hoy con pendientes y completadas, Nueva tarea con nombre, fecha, dificultad y aviso, Aviso con opciones, y Hoy con el mensaje Tarea guardada."></a>
+      <figcaption>Wireframes de la tarea «anotar una tarea pendiente»: Hoy → Nueva tarea → Aviso → Hoy con «Tarea guardada».</figcaption>
+    </figure>
+
+    <h3>Etapa 3 · Alta fidelidad, tarea por tarea</h3>
+    <p>Las pantallas se generaron con IA a partir de los wireframes corregidos, con un prompt por tarea que dictaba colores, tipografía, espaciado, botones y accesibilidad. La IA propuso; nosotros revisamos cada pantalla contra el sistema de diseño.</p>
+
+    <article class="tarea" aria-labelledby="t1">
+      <h4 id="t1">Tarea 1 · Anotar una tarea pendiente con su fecha y qué tan difícil es</h4>
+      <div class="antes-despues">
+        <div><h5>Wireframe</h5><div class="fila-img"><img src="img/wf-t1-flujo.jpg" alt="Wireframes de Hoy, Nueva tarea, Aviso y Hoy con Tarea guardada." style="width:100%;max-width:480px"></div></div>
+        <div><h5>Alta fidelidad</h5><div class="fila-img">
+          <img src="img/af-t1-nueva-tarea.jpg" alt="Nueva tarea en alta fidelidad: campos Nombre y Fecha límite con etiqueta visible, selector de dificultad, aviso, botón Guardar tarea y Cancelar.">
+          <img src="img/af-t1-hoy-guardada.jpg" alt="Hoy con un mensaje verde Tarea guardada arriba, barra de progreso al 25% y tarjetas de tareas con botones Ver detalle y Editar.">
+        </div></div>
+      </div>
+      <p><strong>Qué cambió y por qué:</strong> en la pantalla Hoy, el botón «Añadir tarea» dejó de ser flotante y quedó debajo de la lista, porque en la prueba tapaba la última tarea (problema 5). El mensaje «Tarea guardada» se muestra arriba, en verde con ícono, junto a la barra de progreso, para que el cambio se note aunque el usuario mire abajo (problema 4).</p>
+    </article>
+
+    <article class="tarea" aria-labelledby="t2">
+      <h4 id="t2">Tarea 2 · Saber qué tengo que hacer primero hoy</h4>
+      <div class="fila-img">
+        <img src="img/af-t1-hoy.jpg" alt="Hoy en alta fidelidad con progreso del día y tareas pendientes.">
+        <img src="img/af-t2-calendario.jpg" alt="Calendario de octubre con el día 28 seleccionado y las tareas de ese día con etiquetas de estado y dificultad.">
+        <img src="img/af-t2-detalle.jpg" alt="Detalle de tarea: Estudiar para parcial, fecha límite, dificultad Alta con botón Cambiar, aviso, y botones Marcar como hecha y Editar tarea.">
+      </div>
+      <p><strong>Qué cambió y por qué:</strong> el Calendario conserva la leyenda de puntos, que en la prueba se entendió enseguida (facilidad 6,5 de 7). Se agregó una pantalla de Detalle con «Marcar como hecha» como acción principal, para que completar una tarea no dependa de acertarle a un checkbox chico (problema 2).</p>
+    </article>
+
+    <article class="tarea" aria-labelledby="t3">
+      <h4 id="t3">Tarea 3 · Recibir un aviso cuando se acerca la fecha de una tarea</h4>
+      <div class="antes-despues">
+        <div><h5>Wireframe</h5><div class="fila-img"><img src="img/wf-t3-aviso-sonando.jpg" alt="Wireframe del aviso sonando con campana, nombre de la tarea, prioridad y botones."></div></div>
+        <div><h5>Alta fidelidad</h5><div class="fila-img">
+          <img src="img/af-t1-aviso.jpg" alt="Pantalla Aviso: opciones Sin aviso, 1 día antes, 2 días antes y A elección con una flecha.">
+          <img src="img/af-t3-aviso-sonando.jpg" alt="Aviso de tarea: Entregar informe de usabilidad, vence mañana, con botones Marcar como hecha, Posponer 1 hora y Abrir tarea.">
+        </div></div>
+      </div>
+      <p><strong>Qué cambió y por qué:</strong> «A elección» ahora es una fila con flecha, igual que un elemento de navegación, porque en la prueba 2 de 3 personas no notaron que se podía tocar (problema 3). El aviso ofrece «Posponer 1 hora» además de marcar como hecha, para que postergar sea una decisión visible (historia 3).</p>
+    </article>
+
+    <article class="tarea" aria-labelledby="t4">
+      <h4 id="t4">Tarea 4 · Cambiar la fecha o la dificultad de una tarea ya cargada</h4>
+      <div class="antes-despues">
+        <div><h5>Wireframe</h5><div class="fila-img"><img src="img/wf-t4-editar.jpg" alt="Wireframe de Editar tarea con dificultad Alta, Media o Baja."></div></div>
+        <div><h5>Alta fidelidad</h5><div class="fila-img">
+          <img src="img/af-t4-editar.jpg" alt="Editar tarea con dificultad Fácil, Media o Difícil y botón Guardar cambios.">
+          <img src="img/af-t4-eliminar.jpg" alt="Diálogo ¿Eliminar esta tarea? con Cancelar como botón principal y Eliminar en rojo como acción secundaria.">
+        </div></div>
+      </div>
+      <p><strong>Qué cambió y por qué:</strong> la dificultad pasó de Alta/Media/Baja a <strong>Fácil/Media/Difícil</strong>, porque Alta/Media/Baja era también la escala de la prioridad y se confundían. Eliminar pide confirmación, con «Cancelar» como acción principal, para prevenir errores (heurística 5).</p>
+    </article>
+
+    <article class="tarea" aria-labelledby="t5">
+      <h4 id="t5">Tarea 5 · Registrar una tarea con mis palabras y que la app decida su prioridad</h4>
+      <div class="antes-despues">
+        <div><h5>Wireframe</h5><div class="fila-img">
+          <img src="img/wf-t5-crear-con-ia.jpg" alt="Wireframe Crear con IA con un campo de texto libre.">
+          <img src="img/wf-t5-propuesta.jpg" alt="Wireframe Propuesta de la IA con prioridad sugerida.">
+          <img src="img/wf-t5-error.jpg" alt="Wireframe del error de la IA: No pudimos sugerir una prioridad.">
+        </div></div>
+        <div><h5>Alta fidelidad</h5><div class="fila-img">
+          <img src="img/af-t5-crear-con-ia.jpg" alt="Crear con IA: campo para escribir o dictar, sugerencias rápidas y botón Generar propuesta.">
+          <img src="img/af-t5-propuesta.jpg" alt="Propuesta de la IA con la prioridad sugerida y botones Guardar con esta prioridad, Editar y Descartar.">
+          <img src="img/af-t5-error.jpg" alt="Error de la IA en rojo con ícono: No pudimos sugerir una prioridad, y botones Intentar de nuevo, Completar manualmente y Cancelar.">
+        </div></div>
+      </div>
+      <p><strong>Qué cambió y por qué:</strong> la propuesta de la IA se muestra para revisar <em>antes</em> de guardar, y la decisión queda en manos de Mateo. Para cuando la IA falla, se diseñó una pantalla de error que dice qué pasó, aclara que el texto escrito no se pierde y ofrece tres salidas.</p>
+    </article>
+
+    <article class="tarea" aria-labelledby="t6">
+      <h4 id="t6">Tarea 6 · Corregir la prioridad que sugirió la IA</h4>
+      <div class="antes-despues">
+        <div><h5>Wireframe</h5><div class="fila-img">
+          <img src="img/wf-t6-cambiar-prioridad.jpg" alt="Wireframe Cambiar prioridad con opciones Alta (sugerida por la IA), Media y Baja.">
+          <img src="img/wf-t6-revision.jpg" alt="Wireframe de la propuesta con la prioridad elegida por el usuario.">
+        </div></div>
+        <div><h5>Alta fidelidad</h5><div class="fila-img">
+          <img src="img/af-t6-cambiar-prioridad.jpg" alt="Cambiar prioridad: Alta marcada como Sugerida por la IA, Media seleccionada con borde grueso, y botón Aplicar prioridad.">
+          <img src="img/af-t6-revision.jpg" alt="Propuesta de la IA con un recuadro Prioridad elegida por ti: Media, ajustada manualmente.">
+        </div></div>
+      </div>
+      <p><strong>Qué cambió y por qué:</strong> esta tarea nació de la prueba con wireframes. Tocar «Editar» en la propuesta llevaba a un formulario vacío y se perdía todo lo que había generado la IA (problema 1, bloqueante). Ahora se corrige solo la prioridad, en su propia pantalla, sin perder el resto. La opción elegida se marca con el control y un borde grueso, no solo con color, y la revisión muestra «Prioridad elegida por ti».</p>
+    </article>
+
+    <h3>Sistema de diseño</h3>
+    <p>Definimos el sistema antes de generar las pantallas, pensando en Mateo: usa la app entre clases, apurado y cansado. Busca transmitir calma y confianza, con una sola tipografía y un único color para lo que se puede tocar. Los contrastes se midieron contra fondo blanco (WCAG 2.1 AA).</p>
+    <div class="muestras">
+      <div class="muestra"><div class="color" style="background:#2457A6"></div><div><strong>Acción</strong><br><code>#2457A6</code> · 7,03:1<br>Solo botones y enlaces</div></div>
+      <div class="muestra"><div class="color" style="background:#1F2A37"></div><div><strong>Texto principal</strong><br><code>#1F2A37</code> · 14,54:1</div></div>
+      <div class="muestra"><div class="color" style="background:#4B5A6E"></div><div><strong>Texto secundario</strong><br><code>#4B5A6E</code> · 7,03:1</div></div>
+      <div class="muestra"><div class="color" style="background:#8392A6"></div><div><strong>Bordes</strong><br><code>#8392A6</code> · 3,17:1<br>Solo bordes</div></div>
+      <div class="muestra"><div class="color" style="background:#B42318"></div><div><strong>Error</strong><br><code>#B42318</code> · 6,57:1</div></div>
+      <div class="muestra"><div class="color" style="background:#1B7A4B"></div><div><strong>Éxito</strong><br><code>#1B7A4B</code> · 5,34:1</div></div>
+    </div>
+    <div class="tabla-scroll">
+      <table>
+        <caption>Decisiones del sistema de diseño</caption>
+        <thead><tr><th scope="col">Decisión</th><th scope="col">Valor</th><th scope="col">Por qué</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Tipografía</th><td>Inter</td><td>Sans serif muy legible en pantallas chicas.</td></tr>
+          <tr><th scope="row">Escala de texto</th><td>Título 24 negrita · Subtítulo 18 seminegrita · Cuerpo 16 regular · Chico 14 regular</td><td>Cuatro tamaños alcanzan para marcar jerarquía. Nada menor a 14.</td></tr>
+          <tr><th scope="row">Espaciado</th><td>8, 16, 24 y 32 pt</td><td>Poco espacio dentro de un grupo y más entre grupos.</td></tr>
+          <tr><th scope="row">Botones</th><td>Primario relleno azul · Secundario con borde · Terciario solo texto · mínimo 48 pt de alto</td><td>Un solo primario por pantalla marca la acción principal; 48 pt se toca bien con una mano.</td></tr>
+          <tr><th scope="row">Reglas de uso</th><td colspan="2">1) Un solo botón primario por pantalla. 2) El azul de acción solo en botones y enlaces. 3) Error y éxito siempre con ícono y texto, nunca solo color. 4) Dificultad Fácil/Media/Difícil; prioridad Alta/Media/Baja.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pendiente">
+      <p><strong>Revisión crítica de la alta fidelidad (a corregir en la demo).</strong> Al revisar las pantallas generadas con IA contra el sistema encontramos desvíos que vamos a corregir al programar la demo:</p>
+      <ul>
+        <li>Algunos encabezados quedaron en inglés («New Task», «Task Details», «Edit Task», «Confirm Delete»).</li>
+        <li>Algunas etiquetas de dificultad y estado usan rellenos de color (naranja, amarillo, verde) que no están en la paleta.</li>
+        <li>En Nueva tarea, la dificultad todavía aparece como Alta/Media/Baja.</li>
+        <li>Se mezcla voseo («Revisá») con tuteo («Revisa»).</li>
+        <li>La barra inferior no es igual en todas las pantallas, y Hoy con «Tarea guardada» todavía usa el botón flotante.</li>
+      </ul>
+    </div>
+    <p><a href="https://www.figma.com/design/nhPlANoN5DfQwIHJNg5IWS">Abrir todas las pantallas (wireframes y alta fidelidad) en Figma</a>.</p>
+  </div>
+</section>
+
+<!-- 6. EVALUACIONES -->
+<section id="evaluaciones" aria-labelledby="t-evaluaciones">
+  <div class="contenedor">
+    <h2 id="t-evaluaciones"><span class="num">6.</span> Evaluaciones realizadas (Evaluar)</h2>
+    <p class="bajada">Evaluamos primero por inspección, sin usuarios, para predecir problemas, y después con usuarios reales sobre los wireframes para confirmarlos.</p>
+
+    <h3>Evaluación por inspección del prototipo en papel</h3>
+    <p>Revisamos los bocetos y el prototipo en papel con los seis principios de diseño de interacción (ver <a href="#ideacion">Ideación</a>). El problema más repetido fue la <strong>falta de retroalimentación</strong>: en ninguno de los tres bocetos quedaba claro qué pasaba al tocar una tarea, y el affordance de las filas era dudoso.</p>
+    <div class="decision"><p><strong>Cambio que produjo:</strong> agregamos la confirmación al completar una acción y, en los wireframes, botones explícitos («Ver detalle», «Editar») en cada tarjeta.</p></div>
+    <div class="pendiente">
+      <p><strong>Pendiente:</strong> agregar el informe de recorrido cognitivo y evaluación heurística que hizo el equipo evaluador sobre nuestro prototipo en papel. Como referencia del método, en los anexos está la <a href="anexos/06-evaluacion-realizada-a-otro-equipo.pdf">evaluación que nuestro equipo hizo al prototipo de otro equipo (PDF)</a>, con recorrido cognitivo, heurísticas de cuatro evaluadores y problemas consolidados.</p>
+    </div>
+
+    <h3>Prueba de usabilidad con los wireframes</h3>
+    <p><strong>Objetivo:</strong> confirmar si los problemas de retroalimentación y claridad detectados antes se solucionaron, y encontrar nuevos obstáculos en la creación de tareas (manual y con IA) y en el calendario, antes de pasar a alta fidelidad.</p>
+    <p><strong>Participantes (3, sin nombres):</strong> estudiante universitario de 21 años con alta carga académica; emprendedora de 34 años con múltiples pedidos; joven profesional de 28 años.</p>
+    <p><strong>Método:</strong> tareas dadas como escenarios, pensamiento en voz alta, un facilitador que no ayuda y observadores que anotan.</p>
+
+    <div class="tabla-scroll">
+      <table>
+        <caption>Resultados por tarea (3 participantes). Satisfacción final promedio: 4,3 de 5.</caption>
+        <thead><tr><th scope="col">Tarea (escenario)</th><th scope="col">Completaron</th><th scope="col">Tiempo prom.</th><th scope="col">Errores</th><th scope="col">Pedidos de ayuda</th><th scope="col">Facilidad (1–7)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1. Crear con IA · «Tenés un montón de entregas mezcladas en la cabeza y querés que la app te arme una propuesta»</th><td>2 de 3</td><td>2 min 10 s</td><td>3</td><td>2</td><td>4,0</td></tr>
+          <tr><th scope="row">2. Configurar aviso · «Querés que la app te avise dos días antes de una presentación, a las 9:00»</th><td>3 de 3</td><td>1 min 30 s</td><td>1</td><td>0</td><td>5,5</td></tr>
+          <tr><th scope="row">3. Revisar calendario · «Querés ver qué tan cargado tenés el miércoles para decidir si aceptás un compromiso»</th><td>3 de 3</td><td>1 min 15 s</td><td>0</td><td>0</td><td>6,5</td></tr>
+          <tr><th scope="row">4. Marcar completada · «Terminaste de enviar un informe y querés tacharlo de tu lista»</th><td>3 de 3</td><td>45 s</td><td>2</td><td>1</td><td>5,0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <blockquote>«Me armó re bien la propuesta pero le quise cambiar la hora y me borró todo.»<cite>Participante 1, estudiante, durante la tarea 1</cite></blockquote>
+
+    <div class="tabla-scroll">
+      <table>
+        <caption>Problemas consolidados, severidad y cambio realizado</caption>
+        <thead><tr><th scope="col">N.º</th><th scope="col">Problema</th><th scope="col">Pantalla</th><th scope="col">Partic.</th><th scope="col">Sev.</th><th scope="col">Cambio en alta fidelidad</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1</th><td>«Editar» en la propuesta de la IA lleva a crear la tarea de cero y se pierde lo que generó la IA.</td><td>Propuesta de la IA</td><td>2 de 3</td><td><span class="sev sev-4">4</span></td><td>Nueva pantalla «Cambiar prioridad» que corrige solo la prioridad y conserva el resto (tarea 6).</td></tr>
+          <tr><th scope="row">2</th><td>El checkbox para completar una tarea es muy chico; tocan el texto y no pasa nada.</td><td>Hoy / Calendario</td><td>3 de 3</td><td><span class="sev sev-3">3</span></td><td>«Marcar como hecha» como botón principal en el Detalle y en el Aviso. <em>En la demo: que toda la fila marque la tarea.</em></td></tr>
+          <tr><th scope="row">3</th><td>En «Aviso a elección», el selector no parece tocable; se confunde con texto.</td><td>Aviso</td><td>2 de 3</td><td><span class="sev sev-3">3</span></td><td>«A elección» como fila con borde y flecha, igual que las otras opciones.</td></tr>
+          <tr><th scope="row">4</th><td>Al marcar una tarea, la barra de progreso cambia pero no se nota si se mira abajo.</td><td>Hoy</td><td>1 de 3</td><td><span class="sev sev-2">2</span></td><td>Mensaje de éxito arriba, con ícono y texto, y porcentaje visible junto a la barra.</td></tr>
+          <tr><th scope="row">5</th><td>El botón flotante «+ Añadir tarea» tapa la última tarea de la lista.</td><td>Hoy</td><td>1 de 3</td><td><span class="sev sev-2">2</span></td><td>En Hoy, el botón pasó a estar debajo de la lista, a lo ancho. <em>En la demo: aplicarlo también a Hoy con «Tarea guardada».</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Comparación con la evaluación anterior:</strong> la prueba confirmó lo que la inspección había predicho (falta de retroalimentación y affordance al interactuar con las tarjetas) y validó el orden por urgencia: el calendario fue la tarea más fluida. El problema más grave, la edición de la propuesta de la IA, fue nuevo: no se podía ver en papel.</p>
+    <p>Informe completo con las hojas de observación: <a href="anexos/05-prueba-usabilidad-wireframes.pdf">prueba de usabilidad de los wireframes (PDF)</a>.</p>
+
+    <h3 id="plan-prueba">Plan de la prueba de usabilidad con la demo</h3>
+    <div class="tabla-scroll">
+      <table>
+        <caption>Plan de la prueba final</caption>
+        <tbody>
+          <tr><th scope="row">Objetivo</th><td>Comprobar si Mateo puede completar las tareas principales en la demo sin ayuda, y verificar que se resolvieron los problemas 1 a 3 de la prueba con wireframes, especialmente la corrección de la prioridad sugerida por la IA.</td></tr>
+          <tr><th scope="row">Participantes</th><td>5 personas del perfil de Mateo: estudiantes universitarios de 18 a 25 años que combinan cursada con otras responsabilidades (trabajo, tareas del hogar o familia). Al menos 1 que hoy organice todo «de memoria». No pueden ser compañeros del curso ni personas de pruebas anteriores.</td></tr>
+          <tr><th scope="row">Cómo los conseguimos</th><td>Invitación a estudiantes de otras carreras de la FIUNI y de otras facultades cercanas, por grupos de WhatsApp y contactos personales, con un breve filtro previo (edad, carrera, si trabaja, cómo organiza sus tareas).</td></tr>
+          <tr><th scope="row">Lugar y duración</th><td>Presencial, en la facultad, con la demo en un celular. 20 a 25 minutos por sesión.</td></tr>
+          <tr><th scope="row">Roles</th><td>Un facilitador (lee el guion, entrega los escenarios, no ayuda) y uno o dos observadores (anotan sin hablar).</td></tr>
+          <tr><th scope="row">Consentimiento</th><td>Consentimiento informado al inicio: qué se registra, que se puede parar en cualquier momento y que en el portafolio no van nombres ni datos personales.</td></tr>
+          <tr><th scope="row">Métricas por tarea</th><td>Completitud (autónoma, con asistencia o no completada), tiempo, errores y SEQ (facilidad del 1 al 7). Al final: cuestionario SUS.</td></tr>
+          <tr><th scope="row">Metas</th><td>Al menos 4 de 5 completan cada tarea de forma autónoma. SEQ promedio de 5,5 o más. SUS mayor a 68 (promedio de referencia).</td></tr>
+          <tr><th scope="row">Después de la prueba</th><td>Problemas unificados con cantidad de participantes y severidad (1 cosmético, 2 menor, 3 mayor, 4 bloqueante). Se corrigen en la demo los de severidad 3 y 4, con antes y después.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4>Tareas como escenarios (las mismas para todos)</h4>
+    <ol>
+      <li><strong>Anotar una tarea:</strong> «El profesor de Física acaba de pedir un informe para el viernes y es bastante pesado. Querés anotarlo para no olvidarte.»</li>
+      <li><strong>Qué hacer primero:</strong> «Llegaste a la facultad y tenés una hora libre. Querés saber qué te conviene adelantar hoy.»</li>
+      <li><strong>Recibir un aviso:</strong> «Querés que la app te recuerde el informe el día antes, a la mañana.»</li>
+      <li><strong>Cambiar una tarea:</strong> «El profesor movió la fecha del parcial al lunes que viene. Actualizalo en la app.»</li>
+      <li><strong>Registrar con tus palabras:</strong> «Tenés varias cosas en la cabeza: un parcial de Álgebra el viernes y una presentación el lunes. Contáselo a la app como se lo dirías a un amigo.»</li>
+      <li><strong>Corregir la prioridad:</strong> «La app le puso a una tarea una prioridad que no te parece correcta. Dejala como vos creés.»</li>
+    </ol>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="contenedor">
+    <h2>Anexos y enlaces</h2>
+    <ul>
+      <li><a href="https://www.figma.com/design/nhPlANoN5DfQwIHJNg5IWS">Prototipo en Figma: wireframes y alta fidelidad</a></li>
+      <li><a href="anexos/01-analisis-de-datos-empatizar.pdf">Análisis de datos de la encuesta y entrevistas (PDF)</a></li>
+      <li><a href="anexos/02-presentacion-investigacion-y-definicion.pdf">Presentación «Domando el Caos»: investigación y definición (PDF)</a></li>
+      <li><a href="anexos/03-definir-insights-pov-requisitos.pdf">Definir: insights, POV, historias y requisitos (PDF)</a></li>
+      <li><a href="anexos/04-idear-crazy8-prototipo-papel.pdf">Idear: lluvia de ideas, Crazy 8s y prototipo en papel (PDF)</a></li>
+      <li><a href="anexos/05-prueba-usabilidad-wireframes.pdf">Prueba de usabilidad de los wireframes (PDF)</a></li>
+      <li><a href="anexos/06-evaluacion-realizada-a-otro-equipo.pdf">Evaluación por inspección que hicimos a otro equipo (PDF)</a></li>
+    </ul>
+    <p>Gabriel Bolla · Tobías Huber · Sebastián Setrini · Shu Takahashi — Human-Computer Interaction, FIUNI, 2026.</p>
+  </div>
+</footer>
+</body>
+</html>
