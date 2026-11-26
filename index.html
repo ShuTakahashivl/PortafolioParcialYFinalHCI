@@ -38,8 +38,6 @@
       <li><a href="#ideacion">Ideación</a></li>
       <li><a href="#prototipo">Evolución del prototipo</a></li>
       <li><a href="#evaluaciones">Evaluaciones y plan de prueba</a></li>
-      <li><a href="#prueba-demo">Prueba de usabilidad con la demo</a></li>
-      <li><a href="#reflexion">Reflexión final</a></li>
     </ol>
   </div>
 </nav>
@@ -483,77 +481,7 @@
     </ol>
   </div>
 </section>
-  <section id="prueba-demo" aria-labelledby="t-prueba-demo">
-  <div class="contenedor">
-    <h2 id="t-prueba-demo"><span class="num">8.</span> Prueba de usabilidad con la demo</h2>
-    <p class="bajada">La prueba busca saber si los estudiantes pueden organizar sus tareas sin ayuda y si los cambios incorporados después de los wireframes facilitan configurar un aviso y corregir una prioridad sugerida.</p>
-
-    <h3>Plan y participantes</h3>
-    <p>El <a href="#plan-prueba">plan de la sección 6</a> prevé sesiones individuales de 20 a 25 minutos en un celular con al menos cinco estudiantes universitarios de 18 a 25 años que combinan la cursada con otras responsabilidades. Se busca incluir a alguien que todavía se organice de memoria. La convocatoria se dirige a estudiantes de otras carreras o facultades, sin incluir a compañeros del curso ni a personas de pruebas anteriores.</p>
-    <p>Después del consentimiento informado, el facilitador presenta los mismos escenarios a todos y pide que piensen en voz alta. Un observador registra lo que sucede. Los participantes se identifican con códigos como P01 y P02. En cada tarea se registra completitud, tiempo, cantidad de errores y facilidad percibida (SEQ, de 1 a 7). Al terminar la sesión se aplica el cuestionario SUS.</p>
-    <p>Las metas del plan son que al menos el 80 % complete cada tarea sin ayuda, que el SEQ promedio llegue a 5,5 y que el SUS promedio supere 68 puntos. Para el registro manual, el informe de alta fidelidad también propone un tiempo mediano menor de 60 segundos.</p>
-
-    <h3>Resultados por tarea</h3>
-    <p><strong>Pendiente de completar con las sesiones de la demo.</strong> Para cada tarea se informarán los totales de completitud, el tiempo mediano, el total de errores y el SEQ promedio. También se indicará cuántas sesiones aportaron datos a cada métrica si el número varía.</p>
-    <div class="tabla-scroll">
-      <table>
-        <caption>Resultados de las seis tareas de la prueba con la demo</caption>
-        <thead>
-          <tr>
-            <th scope="col">Tarea</th>
-            <th scope="col">Autónoma</th>
-            <th scope="col">Con asistencia</th>
-            <th scope="col">No completada</th>
-            <th scope="col">Tiempo mediano</th>
-            <th scope="col">Errores</th>
-            <th scope="col">SEQ (1–7)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">T1. Registrar el informe de Física</th><td colspan="6">Pendiente de medir</td></tr>
-          <tr><th scope="row">T2. Identificar qué hacer primero hoy</th><td colspan="6">Pendiente de medir</td></tr>
-          <tr><th scope="row">T3. Configurar el aviso del informe</th><td colspan="6">Pendiente de medir</td></tr>
-          <tr><th scope="row">T4. Reprogramar la fecha del parcial</th><td colspan="6">Pendiente de medir</td></tr>
-          <tr><th scope="row">T5. Registrar una tarea con texto libre y revisar la propuesta</th><td colspan="6">Pendiente de medir</td></tr>
-          <tr><th scope="row">T6. Cambiar la prioridad sugerida y guardar</th><td colspan="6">Pendiente de medir</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>SUS y principales hallazgos</h3>
-    <p><strong>SUS pendiente de medir.</strong> Al cerrar las sesiones, se calculará el puntaje individual y el promedio del grupo en una escala de 0 a 100. Los hallazgos indicarán qué tareas cumplieron las metas y en qué pasos aparecieron las principales dificultades.</p>
-
-    <h3>Problemas, severidad y cambios</h3>
-    <p>Los problemas se agruparán por comportamiento observado y se indicará cuántas personas tuvieron cada dificultad. La severidad se registrará del 1 al 4 (1 cosmético, 2 menor, 3 mayor, 4 bloqueante). Los problemas de severidad 3 o 4 se corregirán o quedarán con una justificación. Las capturas mostrarán el mismo paso antes y después de cada cambio realizado.</p>
-    <!-- Después de la prueba, agregá el perfil real sin datos personales, la versión
-         evaluada y los resultados. Para cada hallazgo, indicá tarea, comportamiento
-         observado, n de N participantes, severidad, cambio y estado. Adjuntá capturas
-         en img/ con alt y un pie que explique qué cambió. -->
-  </div>
-</section>
-
-<section id="reflexion" aria-labelledby="t-reflexion">
-  <div class="contenedor">
-    <h2 id="t-reflexion"><span class="num">9.</span> Reflexión final</h2>
-
-    <h3>Qué aprendimos</h3>
-    <p>Empezamos pensando en cómo ayudar a un estudiante sobrecargado a recordar sus entregas. La investigación nos llevó a prestar más atención a dos momentos: cuando tiene poco tiempo para anotar algo y cuando tiene que decidir por dónde empezar. Por eso le dimos peso al registro rápido y a la vista de pendientes ordenada por prioridad.</p>
-    <p>La prueba con los wireframes mostró un problema que se nos había pasado: al editar una propuesta de la IA se perdían los datos que ya estaban cargados. Esa observación nos llevó a diseñar una corrección puntual de la prioridad. En el prototipo, la persona puede elegir otro nivel y volver a la revisión conservando los demás datos. También decidimos usar «Fácil», «Media» y «Difícil» para el esfuerzo de una tarea, y «Alta», «Media» y «Baja» para la prioridad. Esa diferencia ayuda a explicar por qué una tarea difícil puede esperar y una tarea fácil puede ser urgente.</p>
-
-    <h3>Qué haríamos distinto</h3>
-    <p>Probaríamos antes los recorridos de corrección y recuperación. Desde el primer wireframe incluiríamos un escenario en el que la persona discrepa con una sugerencia y otro en el que la función de IA falla. También revisaríamos los textos y las etiquetas mientras probamos los flujos, porque llamar igual a dos conceptos distintos puede cambiar la decisión que toma el usuario.</p>
-
-    <h3>Límites y próximos pasos</h3>
-    <p>El prototipo navegable permite simular un aviso dentro de la interfaz. Para evaluar si el producto ayuda a recordar entregas en el día a día, necesitamos probar notificaciones reales en celulares, con la app en segundo plano, y observar el uso durante varias semanas.</p>
-    <p>Después de las sesiones con la demo, vamos a priorizar los problemas que impidan guardar, reprogramar o corregir una tarea. Luego volveríamos a probar esos recorridos y estudiaríamos qué sugerencias de prioridad aceptan o corrigen los estudiantes, y por qué.</p>
-
-    <h3>Cómo usamos la IA y qué decidimos nosotros</h3>
-    <p>En la investigación, usamos IA para apoyar la normalización de transcripciones y contrastar nuestro agrupamiento de entrevistas con una segunda propuesta. La codificación inicial y la interpretación de los hallazgos quedaron a cargo del equipo.</p>
-    <p>En el diseño, usamos IA para pasar de wireframes a pantallas de alta fidelidad. Al revisar lo generado encontramos encabezados en inglés, variaciones en la paleta y etiquetas que confundían dificultad con prioridad. Nosotros definimos el sistema de diseño, revisamos los textos y decidimos que la prioridad sugerida se muestre antes de guardar y pueda corregirse. También diseñamos una salida manual para cuando falle la sugerencia, conservando el texto que la persona ya escribió.</p>
-    <!-- Al cerrar la prueba con la demo, incorporá el hallazgo que más cambió
-         la mirada del equipo y la decisión que tomaron a partir de él. -->
-  </div>
-</section>
+  
 </main>
 
 <footer>
